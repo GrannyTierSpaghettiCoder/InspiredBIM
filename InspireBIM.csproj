@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ <!-- TL Props -->
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>inBIM</AssemblyName>
+    <PackageId>InspiredBIM.IO</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Marco Tecedor</Authors>
+    <Company>InspiredBIM</Company>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyTitle>inBIM</AssemblyTitle>
+    <Description>Data-driven BI modelling</Description>
+    <Copyright>&copy; Marco Tecedor</Copyright>
+    <UserSecretsId>MTEC</UserSecretsId>
+    <RuntimeIdentifiers>win7-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="7.2.0.639-ci" />
+  </ItemGroup>
+</Project>
