@@ -1,16 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>inBIM.Core</AssemblyName>
     <RootNamespace>Inspired</RootNamespace>
     <Description>inBIM corefunctionality. distributed in patterns and with intent. PLease make an issue, if you disagree.</Description>
-    <AssemblyVersion>0.0.2.*</AssemblyVersion>
+    <OutputPath>.\bin\$(Configuration)</OutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+    <UpdateAssemblyInfo>true</UpdateAssemblyInfo>
+    <RevitVersion>2018</RevitVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Item Include="*.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="7.2.0.1038-pre" />
+    <Import Include="System.Drawing" />
   </ItemGroup>
 </Project>

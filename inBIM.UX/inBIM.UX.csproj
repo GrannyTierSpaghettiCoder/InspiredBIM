@@ -1,11 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
       <TargetFramework>netcoreapp3.0</TargetFramework>
-      <RootNamespace>Inspired</RootNamespace>
       <AssemblyName>inBIM.UX</AssemblyName>
+      <OutputType>Library</OutputType>
+      <OutputPath>.\bin\$(Configuration)</OutputPath>
+      <AppDesignerFolder>Properties</AppDesignerFolder>
+      <FileAlignment>512</FileAlignment>
+      <UpdateAssemblyInfo>true</UpdateAssemblyInfo>
+      <RevitVersion>2018</RevitVersion>
    </PropertyGroup>
-  <ItemGroup>
-    <Page Include="View\Controller_View.xaml" />
-    <Page Include="View\Main_View.xaml" />
+   <ItemGroup>
+    <ProjectReference Include="..\inBIM.Core\inBIM.Core.csproj" />
+    <ProjectReference Include="..\inBIM.Revit\inBIM.Revit.2018.csproj" />
   </ItemGroup>
 </Project>

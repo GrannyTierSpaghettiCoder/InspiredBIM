@@ -1,6 +1,7 @@
-﻿using System.Windows.Media;
+﻿using System.Drawing;
+using System.Windows;
 
-namespace inBIM.Core.Contracts
+namespace inBIM.Contracts
 {
 	 public interface IClientTheme
 	 {

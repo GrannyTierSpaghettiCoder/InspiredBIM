@@ -11,18 +11,6 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "inBIM.All", "inBIM.All\inBI
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "inBIM.Revit", "inBIM.Revit\inBIM.Revit.shproj", "{7905A032-83CA-4BD1-A23C-E0738758F994}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0840F4E4-4CAB-4696-A6DE-4C8551622F98}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		build\build.cake = build\build.cake
-		build\build.ps1 = build\build.ps1
-		Directory.Build.props = Directory.Build.props
-		Directory.Build.targets = Directory.Build.targets
-		global.json = global.json
-		obj\InspiredBIM.csproj.nuget.g.props = obj\InspiredBIM.csproj.nuget.g.props
-	EndProjectSection
-	Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{061CCC00-E026-4AA5-A1EE-69A08521A252}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		inBIM.All\inBIM.All.projitems*{4b9f7385-2e1a-4406-aa11-3fbd98b0ea9b}*SharedItemsImports = 13
@@ -64,9 +52,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{061CCC00-E026-4AA5-A1EE-69A08521A252} = {0840F4E4-4CAB-4696-A6DE-4C8551622F98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D09D5BE3-BEF1-4C6E-8039-48FB1F9811EE}

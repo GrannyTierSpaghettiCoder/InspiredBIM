@@ -1,9 +1,9 @@
 ﻿using inBIM.Core.Contracts;
-using System.Windows.Media;
+
 
 namespace inBIM.Core.Models
 {
-	 public class ClientTheme_Model : IClientTheme
+    public class ClientTheme_Model : IClientTheme
 	 {
 		  public Brush Background { get; set; }
 		  public Brush Bomb { get; set; }

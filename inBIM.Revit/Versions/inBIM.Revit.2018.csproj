@@ -2,19 +2,19 @@
   <PropertyGroup>
     <DefineConstants>TRACE;DEBUG;REVIT;REVIT2018</DefineConstants>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.0;netstandard*;net452</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>inBIM.Revit</AssemblyName>
+    <OutputType>Library</OutputType>
+    <OutputPath>.\bin\$(Configuration)</OutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+    <UpdateAssemblyInfo>true</UpdateAssemblyInfo>
+    <AssemblyName>inBIM.Revit.$(RevitVersion)</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2016.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2017.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2018.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2019.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT$(RevitVersion).jpg" Label="Splash"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Provider\" />
-  </ItemGroup>
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.DesktopUI" />
+    <ProjectReference Include="inBIM.Revit.shproj" />
   </ItemGroup>
 </Project>
