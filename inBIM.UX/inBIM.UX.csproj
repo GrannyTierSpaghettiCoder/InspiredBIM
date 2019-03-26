@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+      <TargetFramework>netcoreapp3.0</TargetFramework>
+      <RootNamespace>Inspired</RootNamespace>
+      <AssemblyName>inBIM.UX</AssemblyName>
+   </PropertyGroup>
+  <ItemGroup>
+    <Page Include="View\Controller_View.xaml" />
+    <Page Include="View\Main_View.xaml" />
+  </ItemGroup>
+</Project>

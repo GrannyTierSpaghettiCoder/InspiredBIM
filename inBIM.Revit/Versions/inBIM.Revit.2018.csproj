@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <DefineConstants>TRACE;DEBUG;REVIT;REVIT2018</DefineConstants>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0;netstandard*;net452</TargetFramework>
+    <AssemblyName>inBIM.Revit</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2016.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2017.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2018.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT2019.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Provider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.DesktopUI" />
+  </ItemGroup>
+</Project>

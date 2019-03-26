@@ -1,0 +1,42 @@
+﻿<Project>
+<!-- https://www.nuget.org/packages/AutoCAD.NET + CORE + .Model -->
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <SignAssembly>false</SignAssembly>
+	<AcadBaseImported>true</AcadBaseImported>
+	<OutputPath>$(BaseOutPutPath)\$(Configuration)\$(AcadVersion)\</OutputPath>
+    <TargetFramework>net47</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(AcadVersion)' == '2015'">
+    <AcadConstants>20.1</AcadConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AcadVersion)' == '2016'">
+    <AcadConstants>21.0</AcadConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AcadVersion)' == '2017'">
+    <AcadConstants>22.0</AcadConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AcadVersion)' == '2018'">
+    <AcadConstants>23.0</AcadConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AcadVersion)' == '2019'">
+    <AcadConstants>24.0</AcadConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DefineConstants>TRACE;DEBUG;$(AcadConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' ">
+    <DefineConstants>RELEASE;$(AcadConstants)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoCAD.NET.Core" Version="$(AcadConstants).*" />
+    <PackageReference Include="AutoCAD.NET.Model" Version="$(AcadConstants).*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="**\*.dwg"/>
+    <None Update="**\*.dgn"/>
+    <None Update="**\*.addin"/>
+  </ItemGroup>
+</Project>

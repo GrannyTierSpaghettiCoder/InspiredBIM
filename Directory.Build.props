@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DefaultItemExcludes>*log</DefaultItemExcludes>
+    <MSBuildTreatWarningsAsErrors>false</MSBuildTreatWarningsAsErrors>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>IO.inBIM</RootNamespace>
+    <Authors>Marco Tecedor</Authors>
+    <Company>inBIM</Company>
+    <DefineConstants Label="RevitVer">2018</DefineConstants>
+    <DefineConstants Label="AcadVer">2017</DefineConstants>
+    <DefineConstants Label="NavisVer">2018</DefineConstants>
+    <Description>Collaborate around data-driven models - inBIM.</Description>
+    <Copyright>� InspiredBIM (inBIM). All rights reserved.</Copyright>
+    <PackageIconUrl>https://avatars0.githubusercontent.com/u/43687753?s=200&v=4 </PackageIconUrl>
+    <PackageProjectUrl>https://www.inBIM.io</PackageProjectUrl>
+    <PackageLicenseUrl>https://www.inBIM.io/license.md</PackageLicenseUrl>
+    <PackageReleaseNotes>v0.0.2 release https://www.inBIM.io/releases.md </PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="7.2.0.1038-pre" />
+    <PackageReference Include="Prism.DryIoc" Version="7.2.0.1038-pre" />
+    <PackageReference Include="Prism.Unity.Windows" Version="7.2.0.1038-pre" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.3.138" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

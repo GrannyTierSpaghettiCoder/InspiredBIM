@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
+    <PackageId>InspiredBIM.IO</PackageId>
+    <Authors>Marco Tecedor</Authors>
+    <Company>inBIM</Company>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyTitle>inBIM</AssemblyTitle>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <Description>Data-driven BI modelling</Description>
+    <Copyright>(c) 2019 Marco Tecedor</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+   <PackageReference Include="Prism.Core" Version="7.2.0.1338-pre" />
+    <PackageReference Include="Prism.DryIoc" Version="7.2.0.1338-pre" />
+    <PackageReference Include="Prism.Windows" Version="7.2.0.1338-pre" />
+    <Link Include=".\Targets\*.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System" />
+    <PackageReference Include="System.ComponentModel.Composition" />
+    <PackageReference Include="System.Core" />
+    <PackageReference Include="System.Data.DataSetExtensions" />
+    <PackageReference Include="System.Data" />
+    <PackageReference Include="System.Design" />
+    <PackageReference Include="System.Drawing" />
+    <PackageReference Include="System.Transactions" />
+    <PackageReference Include="System.Windows.Forms" />
+    <PackageReference Include="System.Xml" />
+    <PackageReference Include="System.Xaml" />
+    <PackageReference Include="System.Xml.Linq" />
+    <PackageReference Include="UIAutomationTypes" />
+    <ProjectReference Include="WindowsBase" />
+    <ProjectReference Include="PresentationCore" />
+    <ProjectReference Include="PresentationFramework" />
+  </ItemGroup>
+</Project>

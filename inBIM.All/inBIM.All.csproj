@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+  <Reference Include="" />
+    <TargetFrameworks>netcoreapp3.0;netstandard1.1;net452</TargetFrameworks>
+    <AssemblyName>All</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="Models\Bootstrapper_Model.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.DesktopUI" />
+  </ItemGroup>
+</Project>

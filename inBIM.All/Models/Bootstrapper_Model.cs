@@ -3,9 +3,16 @@ using inBIM.Core.Models;
 using Microsoft.Practices.Unity;
 using Prism.Logging;
 
+#if REVIT
+using Autodesk.Revit.UI;
+using inBIM.Revit.Contracts;
+using inBIM.Revit.Extensions;
+using inBIM.Revit.Models;
+using inBIM.Revit.Services;
+using inBIM.Revit;
 
-#if ACAD
 
+#elif ACAD
 using inBIM.AutoCAD.Contracts;
 using inBIM.AutoCAD.Helpers;
 using inBIM.AutoCAD.Models;
@@ -13,21 +20,11 @@ using inBIM.AutoCAD.Services;
 using inBIM.AutoCAD;
 
 #elif NAVIS
-
 using inBIM.Navisworks.Contracts;
 using inBIM.Navisworks.Helpers;
 using inBIM.Navisworks.Models;
 using inBIM.Navisworks.Services;
 using inBIM.Navisworks;
-
-#elif REVIT
-
-using Autodesk.Revit.UI;
-using inBIM.Revit.Contracts;
-using inBIM.Revit.Extensions;
-using inBIM.Revit.Models;
-using inBIM.Revit.Services;
-using inBIM.Revit;
 
 #endif
 
@@ -46,8 +43,28 @@ namespace inBIM.Core.Components
 
             Container = boot.Container;
 
-            IApplicationAuthor author = new ApplicationAuthor_Model("Ben de Vries", "ben.devries@aurecongroup.com");
+            IApplicationAuthor author = new ApplicationAuthor_Model("Marco Tecedor", "m@inbim.io");
             Container.RegisterInstance(author);
+
+#if REVIT
+
+        public void InitializeRVT(UIControlledApplication uiapp)
+        {
+            if (uiapp == null) throw new System.ArgumentNullException(nameof(uiapp));
+
+            Initialize();
+
+            IClientInformation appclient = new ClientInformation_Model(Core.Enums.Products.REVIT, uiapp.GetYear());
+
+            IRevitClientInformation revitclient = new RevitClientInformation_Model(uiapp.GetYear(), uiapp.GetProduct());
+            Container.RegisterInstance(revitclient, new ContainerControlledLifetimeManager());
+
+            Container.RegisterType<IClientRVT, Client>();
+            Container.RegisterType<IMessageBoxService, MessageBox_Service>();
+
+        }
+
+#endif
 
 #if ACAD
             IClientInformation appclient = new ClientInformation_Model(Application_Helpers.Product(), Application_Helpers.Year());
@@ -70,26 +87,5 @@ namespace inBIM.Core.Components
 
 #endif
         }
-
-#if REVIT
-
-        public void InitializeRVT(UIControlledApplication uiapp)
-        {
-            if (uiapp == null) throw new System.ArgumentNullException(nameof(uiapp));
-
-            Initialize();
-
-            IClientInformation appclient = new ClientInformation_Model(Core.Enums.Products.REVIT, uiapp.GetYear());
-
-            IRevitClientInformation revitclient = new RevitClientInformation_Model(uiapp.GetYear(), uiapp.GetProduct());
-            Container.RegisterInstance(revitclient, new ContainerControlledLifetimeManager());
-
-            Container.RegisterType<IClientRVT, Client>();
-            Container.RegisterType<IMessageBoxService, MessageBox_Service>();
-
-        }
-
-#endif
-
     }
 }

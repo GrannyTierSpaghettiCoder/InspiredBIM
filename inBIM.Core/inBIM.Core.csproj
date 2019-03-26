@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>inBIM.Core</AssemblyName>
+    <RootNamespace>Inspired</RootNamespace>
+    <Description>inBIM corefunctionality. distributed in patterns and with intent. PLease make an issue, if you disagree.</Description>
+    <AssemblyVersion>0.0.2.*</AssemblyVersion>
   </PropertyGroup>
-
+  <ItemGroup>
+    <Item Include="*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="7.2.0.1038-pre" />
+  </ItemGroup>
 </Project>
