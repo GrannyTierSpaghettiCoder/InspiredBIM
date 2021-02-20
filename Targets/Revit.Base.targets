@@ -1,0 +1,46 @@
+﻿<Project>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <SignAssembly>false</SignAssembly>
+	  <RevitBaseImported>true</RevitBaseImported>
+  	<OutputPath>$(BaseOutPutPath)\$(Configuration)\$(RevitVersion)\</OutputPath>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(RevitVersion)' == '2015'">
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RevitVersion)' == '2016'">
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RevitVersion)' == '2017'">
+    <TargetFramework>net452</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RevitVersion)' == '2018'">
+    <TargetFramework>net46</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RevitVersion)' == '2019'">
+    <TargetFramework>net47</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug' ">
+    <DefineConstants>TRACE;DEBUG;R$(RevitVersion)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' ">
+    <DefineConstants>RELEASE;R$(RevitVersion)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Revit.RevitApi.x64" Version="$(RevitVersion).*" />
+	<PackageReference Include="Revit.RevitApiUI.x64" Version="$(RevitVersion).*" />
+	<PackageReference Include="Revit.AdWindows.x64" Version="$(RevitVersion).*" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <None Update="**\*.rvt"/>
+    <None Update="**\*.rte"/>
+    <None Update="**\*.rfa"/>
+    <None Update="**\*.rft"/>
+    <None Update="**\*.addin"/>
+  </ItemGroup>
+</Project>

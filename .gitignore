@@ -260,3 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 /AMP/AMP.nuspec
+
+#Jekyll and Ruby
+/_site
+/Gemfile.lock

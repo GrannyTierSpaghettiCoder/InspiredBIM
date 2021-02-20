@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <DefineConstants>TRACE;DEBUG;REVIT;REVIT2018</DefineConstants>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>inBIM.Revit</AssemblyName>
+    <OutputType>Library</OutputType>
+    <OutputPath>.\bin\$(Configuration)</OutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+    <UpdateAssemblyInfo>true</UpdateAssemblyInfo>
+    <AssemblyName>inBIM.Revit.$(RevitVersion)</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\REVIT$(RevitVersion).jpg" Label="Splash"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="inBIM.Revit.shproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <SharedGUID>7905a032-83ca-4bd1-a23c-e0738758f994</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>inBIM.Revit</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\DockPane_Commands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IClientRVT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IRevitClientInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DockPane_Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Provider\DockPane_Provider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntryPoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Versions_Enum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Version_Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RevitClientTheme_Model.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RevitClientInformation_Model.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MessageBox_Service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Properties\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Provider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(MSBuildThisFileDirectory)inBIM.Revit.$(RevitVersion).csproj" />
+  </ItemGroup>
+</Project>
